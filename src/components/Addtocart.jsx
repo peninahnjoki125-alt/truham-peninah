@@ -1,14 +1,16 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const Addtocart = () => {
- const { product } = useLocation().state || {}
+    const { product } = useLocation().state || {}
     const img_url = "http://peninahtruham.alwaysdata.net/static/images/"
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
     const [error, setError] = useState("")
+    const navigate = useNavigate()
     // function for makepayment
     const submit = async (e) => {
         // preventing the default loading behaviour of a form
@@ -43,8 +45,9 @@ const Addtocart = () => {
                 <form onSubmit={submit}>
                     {error}
                     {message}
-                    
-                    <button type='submit' className='btn btn-info  w-100'>add to cart</button>
+
+                    <button className='btn btn-dark mt-2 w-100' onClick={() => navigate('/makepayment', { state: { product } })}>Buy Now</button>
+
                 </form>
             </div>
         </div>
