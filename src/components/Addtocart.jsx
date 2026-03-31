@@ -47,6 +47,7 @@ const Addtocart = () => {
                     {message}
 
                     <button className='btn btn-dark mt-2 w-100' onClick={() => navigate('/makepayment', { state: { product } })}>Buy Now</button>
+                    <button className='btn btn-dark mt-2 w-100' onClick={() => navigate('/deleteproduct', { state: { product } })}>remov</button>
 
                 </form>
             </div>

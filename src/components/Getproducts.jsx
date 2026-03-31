@@ -1,6 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import slide1 from "../images/Baby Girl Clothes Long Sleeve.jpeg"
+import slide2 from "../images/Mens brown double breasted suit _ Custom tailored pinstripe outfit.jpeg"
+import slide3 from "../images/Step into Spring 17 Floral Maxidresses Youll Adore.jpeg"
+
 
 const Getproducts = () => {
   const [products, setProducts] = useState([])
@@ -38,39 +42,40 @@ const Getproducts = () => {
 
 
       {/* mapping the card to all the products */}
-
-      <section class="row">
-        <div class="col-md-12">
-          <div class="carousel slide" data-bs-ride="carousel" id="mycarousel">
-            <img src="" alt="" sizes="" srcset="" />
-            <div class="carousel-inner ">
-
-              <div class="carousel-item active">
-                {/* <img src="images/slide4.jpg" alt="slide4" class="w-100 d-block"> */}
-
-              </div>
-
-              <div class="carousel-item">
-                {/* <img src="images/slide2.jpg" alt="slide2" class="w-100 d-block"> */}
-              </div>
-
-              <div class="carousel-item">
-                {/* <img src="images/slide3.jpg" alt="slide3" class="w-100 d-block"> */}
-                <img src="" alt="" />
-              </div>
-            </div>
-
-            <a href="#mycarousel" data-bs-slide="prev" class="carousel-control-prev">
-              <span class="carousel-control-prev-icon bg-danger"></span>
-            </a>
-
-            <a href="#mycarousel" data-bs-slide="next" class="carousel-control-next ">
-              <span class="carousel-control-next-icon bg-danger"></span>
-            </a>
-          </div>
-        </div>
-      </section>
-
+      
+              <section className ="row">
+                <div className="col-md-12">
+                  <div className="carousel slide" data-bs-ride="carousel" id="mycarousel">
+                    {/* <!--container for the first part--> */}
+                    <div className="carousel-inner ">
+                      {/* <!--first image--> */}
+                      <div className="carousel-item active">
+                        <img src={slide1} alt="slide4" width = "100%" height="800px" />
+                      </div>
+                      {/* <!--second image--> */}
+                      <div className="carousel-item">
+                        <img src={slide2} alt="slide2" width = "100%" height="800px" />
+                      </div>
+                      {/* <!--third image--> */}
+                      <div className="carousel-item">
+                        <img src={slide3} alt="slide3" width = "100%" height="800px" />
+                      </div>
+                    </div>
+                    {/* <!--conatiner for second part--> */}
+                    <a href="#mycarousel" data-bs-slide="prev" className="carousel-control-prev">
+                      <span className="carousel-control-prev-icon bg-danger"></span>
+                    </a>
+                    {/* <!--conatiner for the third part--> */}
+                    <a href="#mycarousel" data-bs-slide="next" className="carousel-control-next ">
+                      <span className="carousel-control-next-icon bg-danger"></span>
+                    </a>
+                  
+                  </div>
+                </div>
+              </section>
+              <hr />
+              
+     
       {products.map((product) => (
         <div className='col-md-4 justify-content-center mb-4'>
           <div className='card shadow'>
@@ -80,7 +85,9 @@ const Getproducts = () => {
               <p>{product.product_description}</p>
               <p>{product.producct_cost}</p>
               <button className='btn btn-dark mt-2 w-100' onClick={() => navigate('/makepayment', { state: { product } })}>Buy Now</button>
+
               <button className='btn btn-dark mt-2 w-100' onClick={() => navigate('/addtocart', { state: { product } })}>Add to cart</button>
+
             </div>
           </div>
         </div>

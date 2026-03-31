@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Addproduct from './components/Addproduct';
@@ -7,6 +8,7 @@ import Makepayment from './components/Makepayment';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import Addtocart from './components/Addtocart';
+
 
 
 
@@ -33,7 +35,7 @@ function App() {
         <Route path='/' element ={<Getproducts />} />
         <Route path='/makepayment' element = { <Makepayment />} />
         <Route path='/addtocart' element = {<Addtocart />} />
-      
+       
       </Routes>
     </div>
     </BrowserRouter>
