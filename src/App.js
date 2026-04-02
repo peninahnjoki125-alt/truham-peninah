@@ -12,6 +12,7 @@ import Addtocart from './components/Addtocart';
 
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +36,7 @@ function App() {
         <Route path='/' element ={<Getproducts />} />
         <Route path='/makepayment' element = { <Makepayment />} />
         <Route path='/addtocart' element = {<Addtocart />} />
+        
        
       </Routes>
     </div>
